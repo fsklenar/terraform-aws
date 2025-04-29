@@ -9,3 +9,4 @@ Terraform code for AWS:
   - subnet groups
 - common VPC/EC2 and KeyPair modules used for different environments
 - very easy to deploy for different environments - just change `locals.tf` and `terraform.tfvars`
+
