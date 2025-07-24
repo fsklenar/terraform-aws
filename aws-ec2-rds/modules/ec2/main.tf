@@ -12,14 +12,12 @@ module "ec2" {
   associate_public_ip_address = true
   key_name = var.key_pair_name
 
-  root_block_device = [
-    {
+  root_block_device = {
       encrypted   = true
       volume_type = "gp3"
       volume_size = var.root_size
       enable_volume_tags = true
       volume_tags = var.volume_tags
-    },
-  ]
+  }
 
 }
