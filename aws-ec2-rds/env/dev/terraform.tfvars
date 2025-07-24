@@ -8,7 +8,7 @@ cidr_mask = "240"
 azs       = ["eu-central-1a", "eu-central-1b", "eu-central-1c"]
 
 # EC2 Variables
-ami-id    = "ami-0084a47cc718c111a"
+ami-id    = "ami-0083ee179c14acc6a"
 root_size = "12"
 
 #RDS
@@ -20,6 +20,3 @@ resource_tags = {
   project     = "web-app-01",
   environment = "dev"
 }
-
-
-
