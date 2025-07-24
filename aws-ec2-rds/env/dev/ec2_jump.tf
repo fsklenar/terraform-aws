@@ -10,5 +10,6 @@ module "ec2-jump" {
   key_pair_name     = module.key-pair-ec2.key_pair_name
   root_size         = var.root_size
   create_eip        = true
+  associate_public_ip_address = true
 }
 

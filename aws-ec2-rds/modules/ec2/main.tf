@@ -9,7 +9,7 @@ module "ec2" {
   vpc_security_group_ids = [var.security_group_id]
 
   create_eip = var.create_eip
-  associate_public_ip_address = true
+  associate_public_ip_address = var.associate_public_ip_address
   key_name = var.key_pair_name
 
   root_block_device = {

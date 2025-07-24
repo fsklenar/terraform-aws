@@ -9,4 +9,5 @@ module "ec2-app" {
   security_group_id = module.ec2_app_sg.security_group_id
   key_pair_name = module.key-pair-ec2.key_pair_name
   root_size     = var.root_size
+  associate_public_ip_address = false
 }

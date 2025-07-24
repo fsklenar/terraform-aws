@@ -12,10 +12,10 @@
   }
 
   resource "local_file" "tf_key" {
-    content  = tls_private_key.rsa-4096-ec2.private_key_pem
-    filename = var.key_file_name
-    file_permission = "0400"
-
+    sensitive_content  = tls_private_key.rsa-4096-ec2.private_key_pem
+    filename = pathexpand(var.key_file_name)
+    file_permission = "600"
+    directory_permission = "700"
   }
 
 #}

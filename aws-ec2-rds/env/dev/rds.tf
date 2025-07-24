@@ -12,6 +12,7 @@ resource "aws_db_instance" "psql" {
   db_subnet_group_name        = module.vpc_main.database_subnet_group_name
   delete_automated_backups    = false
   backup_retention_period     = var.rds_backup_retention_period
+  final_snapshot_identifier   = "flexdb-snapshot-final"
 
   # Security Group Configuration (Optional)
   vpc_security_group_ids = [
