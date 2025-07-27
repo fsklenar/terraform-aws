@@ -1,11 +1,11 @@
 # Create the RDS Instance
 resource "aws_db_instance" "psql" {
-  allocated_storage = local.rds_storage
-  engine            = "postgres"
-  engine_version    = var.rds_engine
-  instance_class    = var.rds_instance_class
-  identifier        = "rds-${local.name}-db"
-  username          = "postgres"
+  allocated_storage           = local.rds_storage
+  engine                      = "postgres"
+  engine_version              = var.rds_engine
+  instance_class              = var.rds_instance_class
+  identifier                  = "rds-${local.name}-db"
+  username                    = "postgres"
   manage_master_user_password = true
   db_name                     = "flexdb"
   skip_final_snapshot         = false
