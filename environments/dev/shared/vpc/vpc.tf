@@ -1,5 +1,5 @@
 module "vpc_main" {
-  source = "../../../modules/vpc" # Replace with the actual path to your module directory
+  source = "../../../../modules/vpc" # Replace with the actual path to your module directory
 
   vpcname   = "vpc-${local.name}" # Overriding the name defined in variable file
   cidr_mask = var.cidr_mask
