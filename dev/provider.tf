@@ -1,13 +1,12 @@
 # The default provider configuration; resources that begin with `aws_` will use
 # it as the default, and it can be referenced as `aws`.
 provider "aws" {
-  region = var.region
+  region = local.region
 
   default_tags {
     tags = {
       Terraform   = "true"
-      Project     = var.resource_tags.project,
-      Environment = var.resource_tags.environment
+      Environment = local.environment
       Source      = replace(path.cwd, "/^.*?(${"terraform"}\\/)/", "$1")
     }
   }
