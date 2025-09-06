@@ -1,5 +1,5 @@
 resource "aws_ebs_volume" "ec2-app" {
-  availability_zone = module.vpc_main.azs[0]
+  availability_zone = data.terraform_remote_state.vpc_main.outputs.azs[0]
   size              = local.ebs_size
   type              = "gp3"
   encrypted         = false

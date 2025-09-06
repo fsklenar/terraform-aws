@@ -3,7 +3,7 @@ module "ec2_jump_sg" {
 
   name        = "ec2-jump-sg"
   description = "Security group for EC2 JUMP"
-  vpc_id      = module.vpc_main.vpc_id
+  vpc_id      = data.terraform_remote_state.vpc_main.outputs.vpc_id
 
   tags = {
     purpose = "JUMP"
