@@ -2,6 +2,7 @@
 #aws_id = "050752630539"
 region = "eu-central-1"
 owners = "project01"
+env = "dev"
 
 # VPC Variables
 cidr_mask = "240"
