@@ -2,20 +2,20 @@
 resource "aws_db_instance" "psql" {
   allocated_storage           = local.rds_storage
   engine                      = "postgres"
-  engine_version              = var.rds_engine
-  instance_class              = var.rds_instance_class
-  identifier                  = "rds-${local.name}-db"
+  engine_version              = local.rds_engine
+  instance_class              = local.rds_instance_class
+  identifier                  = "rds-${var.aws_id}-${local.name}-db"
   username                    = "postgres"
   manage_master_user_password = true
-  db_name                     = "flexdb"
+  db_name                     = "${local.db_prefix}"
   skip_final_snapshot         = false
   db_subnet_group_name        = data.terraform_remote_state.vpc_main.outputs.database_subnet_group_name
   delete_automated_backups    = false
-  backup_retention_period     = var.rds_backup_retention_period
-  final_snapshot_identifier   = "flexdb-snapshot-final"
+  backup_retention_period     = local.rds_backup_retention_period
+  final_snapshot_identifier   = "${local.db_prefix}-${local.name}-snapshot-final"
 
   # Security Group Configuration (Optional)
   vpc_security_group_ids = [
-    module.db_sg.security_group_id
+    module.rds_pg_sg.security_group_id
   ]
 }

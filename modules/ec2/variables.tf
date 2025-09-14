@@ -70,4 +70,7 @@ variable "associate_public_ip_address" {
   default = false
 }
 
-
+# variable "resource_tags" {
+#   description = "Default resource tags"
+#   type        = map(string)
+# }

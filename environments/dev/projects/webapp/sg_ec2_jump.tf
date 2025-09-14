@@ -5,10 +5,6 @@ module "ec2_jump_sg" {
   description = "Security group for EC2 JUMP"
   vpc_id      = data.terraform_remote_state.vpc_main.outputs.vpc_id
 
-  tags = {
-    purpose = "JUMP"
-  }
-
   ingress_cidr_blocks = ["0.0.0.0/0"]
   ingress_rules       = ["https-443-tcp", "http-80-tcp"]
 
@@ -18,7 +14,7 @@ module "ec2_jump_sg" {
       to_port     = 22
       protocol    = "tcp"
       description = "SSH"
-      cidr_blocks = "37.139.8.159/32"
+      cidr_blocks = "${var.whitelist-ssh-ip}"
     }
   ]
 

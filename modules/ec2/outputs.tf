@@ -13,3 +13,7 @@ output "private_ip" {
   description = "The private IP address assigned to the instance"
   value = module.ec2.private_ip
 }
+
+# output "path_output" {
+#   value = var.folder_path_tag
+# }

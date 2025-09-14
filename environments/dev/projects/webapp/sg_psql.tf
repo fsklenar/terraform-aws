@@ -1,7 +1,7 @@
-module "db_sg" {
+module "rds_pg_sg" {
   source = "terraform-aws-modules/security-group/aws"
 
-  name        = "db-sg"
+  name        = "rds-pg-sg"
   description = "Security group for Postgres"
   vpc_id      = data.terraform_remote_state.vpc_main.outputs.vpc_id
 

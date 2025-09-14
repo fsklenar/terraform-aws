@@ -1,5 +1,15 @@
+#
+# resource "null_resource" "folder_path" {
+#   provisioner "local-exec" {
+#     command = "echo \"folder_path=$(pwd)\" > path.tfvars"
+#   }
+# }
+
 module "ec2" {
   source = "terraform-aws-modules/ec2-instance/aws"
+
+  #folder_path_tag = file("path.tfvars")
+  #root_module_path = path.module
 
   name = var.ec2-name
 
@@ -19,5 +29,7 @@ module "ec2" {
       enable_volume_tags = true
       volume_tags = var.volume_tags
   }
+
+#   tags = var.resource_tags
 
 }

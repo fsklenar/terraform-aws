@@ -1,4 +1,4 @@
 # Local Values in Terraform
 locals {
-  name          = "${var.owners}-${var.resource_tags.environment}"
+  name          = "vpc-${var.aws_id}-${var.owners}-${var.env}"
 }

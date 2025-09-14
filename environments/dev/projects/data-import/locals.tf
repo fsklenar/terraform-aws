@@ -1,6 +1,15 @@
 # Local Values in Terraform
 locals {
-  name          = "${var.owners}-${var.project}-${var.env}"
-  ebs_size      = 5
-  key_file_name = "~/.ssh/id_rsa_${var.project}-ec2.key"
+  project       = "data-import"
+  name          = "${var.owners}-${var.env}-${local.project}"
+  key_file_name = "~/.ssh/id-rsa-${local.name}-ec2.key"
+
+  # EC2 Variables
+  ami-id    = "ami-0a116fa7c861dd5f9"
+  root_size = "12"
+
+  resource_tags = {
+    project     = "${local.project}",
+  }
+
 }
