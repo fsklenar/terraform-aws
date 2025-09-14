@@ -5,9 +5,6 @@ resource "aws_ebs_volume" "ec2-app" {
   encrypted         = false
   final_snapshot    = true
 
-  tags = {
-    Name = "EBS volume for ec2-app"
-  }
 }
 
 resource "aws_volume_attachment" "ec2-app" {

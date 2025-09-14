@@ -47,3 +47,8 @@ variable "whitelist-ssh-ip" {
   description = "Allowed IP for SSH access"
   default = "37.139.8.159/32"
 }
+#
+# variable "script_path" {
+#   type    = string
+#   default = "N/A"
+# }

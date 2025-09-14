@@ -11,4 +11,8 @@ module "ec2-app" {
   key_pair_name               = module.key-pair-ec2.key_pair_name
   root_size                   = local.root_size
   associate_public_ip_address = true
+
+#   tags = {
+#     Source = var.script_path
+#   }
 }

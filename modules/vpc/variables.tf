@@ -42,7 +42,6 @@ variable "single_nat_gateway" {
 
 variable "tags" {
   type = map
-  #default = {}
 }
 
 variable "vpc_tags" {

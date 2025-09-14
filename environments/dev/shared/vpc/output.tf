@@ -41,3 +41,10 @@ output "database_subnet_group_name" {
   value       = module.vpc_main.database_subnet_group_name
 }
 
+# output "vpc_resource_level_tags" {
+#   value = module.vpc_main.tags
+# }
+#
+# output "vpc_all_tags" {
+#   value = module.vpc_main.tags_all
+# }
