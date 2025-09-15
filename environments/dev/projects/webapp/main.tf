@@ -16,16 +16,4 @@ terraform {
   }
 }
 
-provider "aws" {
-  region = var.region
-
-  default_tags {
-    tags = {
-      Terraform   = "true"
-      Environment = var.env
-      Source      = replace(path.cwd, "/^.*?(${"terraform"}\\/)/", "$1")
-    }
-  }
-}
-
 
