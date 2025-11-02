@@ -4,7 +4,8 @@ module "ec2-app" {
   ec2-name = "${local.name}-app"
 
   ec2-instance-type           = "t2.micro"
-  ec2-ami                     = local.ami-id
+  #ec2-ami                     = local.ami-id
+  ec2-ami                     = data.aws_ami.ubuntu.id
 
   subnet_id                   = data.terraform_remote_state.vpc_main.outputs.public_subnets[0]
   security_group_id           = module.ec2_app_sg.security_group_id

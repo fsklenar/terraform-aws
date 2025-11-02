@@ -36,11 +36,11 @@ variable "cidr_mask" {
   type = string
 }
 
-# VPC Availability Zones
-variable "azs" {
-  description = "A list of availability zones names or ids in the region"
-  type        = list(string)
-}
+# # VPC Availability Zones
+# variable "azs" {
+#   description = "A list of availability zones names or ids in the region"
+#   type        = list(string)
+# }
 
 # Allowed IP for SSH access
 variable "whitelist-ssh-ip" {

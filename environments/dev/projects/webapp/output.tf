@@ -40,3 +40,9 @@ output "secret_name" {
   description = "Secrets manager secret name"
   value       = aws_db_instance.psql.master_user_secret
 }
+
+#AMI ID
+output "ami_id" {
+  description = "AMI ID for EC2 instances"
+  value = data.aws_ami.ubuntu.id
+}
