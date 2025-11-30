@@ -5,6 +5,10 @@ resource "aws_ebs_volume" "ec2-app" {
   encrypted         = false
   final_snapshot    = true
 
+  lifecycle {
+    prevent_destroy = true
+  }
+
 }
 
 resource "aws_volume_attachment" "ec2-app" {
