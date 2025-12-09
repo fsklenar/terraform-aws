@@ -6,7 +6,6 @@ locals {
 
   # EC2 Variables
   ami-id    = "ami-0a116fa7c861dd5f9"
-  root_size = "12"
 
   resource_tags = {
     project     = "${local.project}",
